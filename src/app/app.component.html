@@ -1,0 +1,27 @@
+<p-toast key="completed" position="bottom-right"></p-toast>
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+      <img src="assets/logo.png" height="40" class="mr-2" />
+  </ng-template>
+  <div class="card flex gap-2">
+      <i class="pi pi-bell mr-4 p-text-secondary" pBadge style="font-size: 1.5rem" value="2"></i>
+    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+</div>
+</p-menubar>
+<div class="row">
+<div class="btn" style="text-align: center">
+  <button pButton type="button" label="Start" *ngIf="hideBtn" (click)="showProgress()"></button>
+</div>
+</div>
+<p-accordion>
+  <p-accordionTab class="fixed-bottom" [selected]="true" *ngIf="ShowMe" (click)="showProgress()">
+    <p>Migrating data to selected enivironment</p>
+    <p-progressBar [value]="value"  *ngIf="progressbarFlag"></p-progressBar>
+  </p-accordionTab>
+</p-accordion>
+  <footer class="footer">
+    <img src="assets/logo.png" height="15"> <span style="margin:auto; display:table;">Copyrights © 2010-2023 Amplelogic | All Rights Reserved</span>
+  </footer>
+  
+
+  
